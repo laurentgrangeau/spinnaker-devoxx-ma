@@ -9,7 +9,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag laurentgrangeau/devoxx-ma:$GITHUB_SHA
     - name: Login to Dockerhub
-      run: docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       env:
         DOCKER_USERNAME: ${{ secrets.docker_username }}
         DOCKER_PASSWORD: ${{ secrets.docker_password }}
