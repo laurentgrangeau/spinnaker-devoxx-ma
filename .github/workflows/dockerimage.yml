@@ -11,6 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag laurentgrangeau/devoxx-ma:$(date +%s)
+      run: docker build . --file Dockerfile --tag laurentgrangeau/devoxx-ma:GITHUB_SHA
     - name: Push the Docker image
-      run: docker push laurentgrangeau/devoxx-ma:$(date +%s)
+      run: docker push laurentgrangeau/devoxx-ma:$GITHUB_SHA
